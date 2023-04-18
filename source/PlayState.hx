@@ -3396,12 +3396,15 @@ class PlayState extends MusicBeatState
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
 	}
-		for (shader in animatedShaders)
-		{
+
+	for (shader in animatedShaders)
+	{
 			shader.update(elapsed);
-		}
-		#if LUA_ALLOWED
-		
+	}
+}
+#if LUA_ALLOWED
+
+
 for (key => value in luaShaders)
 {
 	value.update(elapsed);
